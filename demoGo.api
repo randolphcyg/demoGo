@@ -1,0 +1,28 @@
+info(
+	author: "randolph"
+	date: "2022-06-21"
+	desc: "demo go"
+)
+
+// 请求体
+type HelloReq {
+	Name string `json:"name"`
+}
+
+// 响应体
+type HelloResp {
+	Message string `json:"message"`
+}
+
+//oa服务
+@server(
+	group: demo
+	prefix: demo
+)
+
+service demogo-api {
+	@doc "demo"
+	
+	@handler GetHello
+	get /getHello (HelloReq) returns (HelloResp)
+}

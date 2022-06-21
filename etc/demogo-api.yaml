@@ -1,0 +1,14 @@
+Name: demogo-api
+Host: 0.0.0.0
+Port: 8888
+
+Log:
+  ServiceName: "demoGo-api"
+  Mode: "console"
+  Level: info
+
+# 直连方式连接grpc服务
+DemoRpcConf:
+  Timeout: 10000
+  Endpoints:
+    - 127.0.0.1:8085

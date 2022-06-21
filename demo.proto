@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package demopb;
+
+option go_package="./demopb";
+
+// 请求体
+message HelloReq {
+  string name = 1;
+}
+
+// 响应体
+message HelloResp {
+  string message = 1;
+}
+
+// demo 客户端
+service demoClient {
+  rpc SayHello (HelloReq) returns (HelloResp) {}
+}
