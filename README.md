@@ -18,10 +18,10 @@ goctl api go --api demoGo.api --dir . --style goZero
 
 因为go-zero基于grpc封装，除了生成原生的pb stub，还会生成自己封装的pb。
 
-我这边选择新开一个文件夹，用goctl rpc命令生成一个rpcX项目，
+我这边选择新开一个文件夹，用goctl rpc命令生成一个rpc项目，
 然后将client和pb文件夹复制到`/javastub`文件夹内即可。
 
-写了个脚本 `./genStub.sh`执行一下 然后javastub文件夹下的client将pb的依赖修改下(删除了再加)
+这边写了个脚本 `./genStub.sh`执行一下 然后javastub文件夹下的client将pb的依赖修改下(删除了再加)，完成了上述操作步骤，后续proto文件变更了只需要同步修改并执行命令、修改接口即可。
 
 ```shell
 goctl rpc protoc demo.proto --go_out=./tmp --go-grpc_out=./tmp --zrpc_out=./tmp  --style goZero
